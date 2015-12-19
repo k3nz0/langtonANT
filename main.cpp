@@ -9,7 +9,7 @@
 
 using namespace std;
 
-const int MOVES = 510 * 100 + 205;
+const int MOVES = 510 * 100 + 205; // Number of ant's moves
 
 
 map <pair <int, int>, int> theMap;
@@ -27,8 +27,9 @@ int main(){
 	int r = 0, last = 0;
 	
 
+	/*
 	// Change the initial map to chess board 100x100
-
+	
 	for(int i = -50; i < 50; i++){
 		if(last == r){
 			r ^= 1;
@@ -39,8 +40,8 @@ int main(){
 			r ^= 1;
 		}
 	}
-
-
+	*/
+	
 	int maxX = 0, minX = 0, maxY = 0, minY = 0;
 
 	for(int i = 0; i < MOVES; i++){
@@ -71,8 +72,10 @@ int main(){
 		maxY = max(maxY, y);
 		minY = min(minY, y);
 	}
+	/* Only for debugging purposes  
 	cerr << maxX << " - " << minX << endl;
 	cerr << maxX << " - " << minY << endl;
+	*/
 	
 	int n = max(abs(maxX), abs(minX));
 	
@@ -81,7 +84,7 @@ int main(){
 	
 	printf("%d\n", n);
 	
-	cerr << n;
+	//cerr << n;
 
 	for(int i = n ; i >= -n; i--){
 		for(int j = -n; j < n; j++){
